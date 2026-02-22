@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rawan International Trading – Fresh Produce Kuwait</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #1a4a2e;
+    --emerald-mid: #2d6b45;
+    --sage: #5a8a66;
+    --sage-light: #8fbfa0;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f5f0e8;
+    --warm-white: #fdfaf4;
+    --dark: #0f2418;
+    --text-dark: #1c2e20;
+    --text-mid: #4a6652;
+    --text-light: #7a9c85;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  body.ar {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    direction: rtl;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(15, 36, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--sage-light); font-style: italic; }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(245, 240, 232, 0.8);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .lang-toggle {
+    display: flex; gap: 0.4rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 0.25rem;
+  }
+
+  .lang-btn {
+    padding: 0.3rem 0.9rem;
+    border: none; border-radius: 16px;
+    font-family: inherit; font-size: 0.75rem;
+    cursor: pointer; transition: all 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .lang-btn.active {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .lang-btn:not(.active) {
+    background: transparent;
+    color: rgba(245,240,232,0.6);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--dark);
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(45, 107, 69, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201, 168, 76, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 100% at 50% 0%, rgba(26, 74, 46, 0.5) 0%, transparent 70%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--sage) 0px, var(--sage) 1px,
+      transparent 1px, transparent 40px
+    );
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 4rem;
+    max-width: 900px;
+    animation: fadeInUp 1.2s ease both;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 2.5rem; height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(245, 240, 232, 0.6);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.2rem;
+    background: var(--gold);
+    color: var(--dark);
+    border: none; border-radius: 2px;
+    font-family: inherit; font-size: 0.78rem;
+    font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(201, 168, 76, 0.3);
+  }
+
+  .btn-outline {
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(245,240,232,0.3);
+    border-radius: 2px;
+    font-family: inherit; font-size: 0.78rem;
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.5rem;
+    color: rgba(245,240,232,0.35);
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-line {
+    width: 1px; height: 3rem;
+    background: linear-gradient(to bottom, transparent, rgba(245,240,232,0.3));
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 4rem; }
+
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    color: var(--gold);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em { font-style: italic; color: var(--emerald-mid); }
+
+  .section-body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--cream);
+    padding: 7rem 4rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .facilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .facility-card {
+    background: white;
+    border: 1px solid rgba(90, 138, 102, 0.15);
+    border-radius: 4px;
+    padding: 1.4rem;
+    transition: all 0.3s;
+  }
+
+  .facility-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(26, 74, 46, 0.08);
+  }
+
+  .facility-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .facility-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--emerald);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .facility-desc {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-image-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-mid) 40%, var(--sage) 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .about-image-frame::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 70%, rgba(201,168,76,0.15) 0%, transparent 50%),
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0px, transparent 20px,
+        rgba(255,255,255,0.02) 20px, rgba(255,255,255,0.02) 21px
+      );
+  }
+
+  .about-image-emoji {
+    font-size: 8rem;
+    opacity: 0.6;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+  }
+
+  .about-stat-badge {
+    position: absolute;
+    bottom: -1.5rem; left: -1.5rem;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 1.2rem 1.5rem;
+    border-radius: 4px;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-top: 0.2rem;
+  }
+
+  /* ── SERVICES / SYSTEMS ── */
+  #services {
+    background: var(--dark);
+    padding: 7rem 4rem;
+  }
+
+  #services h2, #services .section-eyebrow { color: var(--cream); }
+  #services h2 em { color: var(--gold-light); }
+  #services .section-body { color: rgba(245,240,232,0.6); }
+
+  .systems-container {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .system-card {
+    border-radius: 4px;
+    padding: 2.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .system-card:hover { transform: translateY(-4px); }
+
+  .system-card.commission {
+    background: linear-gradient(135deg, var(--emerald-mid) 0%, var(--emerald) 100%);
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .system-card.fixed {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .system-badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .commission .system-badge {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .fixed .system-badge {
+    background: rgba(255,255,255,0.1);
+    color: rgba(245,240,232,0.7);
+  }
+
+  .system-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .system-intro {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+  }
+
+  .system-steps {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.8rem;
+  }
+
+  .system-steps li {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.5;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 1.4rem; height: 1.4rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 700;
+    margin-top: 0.05rem;
+  }
+
+  .commission .step-num {
+    background: rgba(201,168,76,0.25);
+    color: var(--gold-light);
+    border: 1px solid rgba(201,168,76,0.4);
+  }
+
+  .fixed .step-num {
+    background: rgba(255,255,255,0.08);
+    color: rgba(245,240,232,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .commission-highlight {
+    margin-top: 1.8rem;
+    padding: 1.2rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 4px;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .commission-pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .commission-label {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.4;
+  }
+
+  /* ── STORAGE ── */
+  #storage {
+    background: var(--warm-white);
+    padding: 7rem 4rem;
+  }
+
+  .storage-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .storage-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .storage-feature {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.2rem;
+    border: 1px solid rgba(90,138,102,0.15);
+    border-radius: 4px;
+    background: white;
+    transition: all 0.3s;
+  }
+
+  .storage-feature:hover {
+    border-color: var(--sage);
+    box-shadow: 0 8px 24px rgba(26,74,46,0.07);
+  }
+
+  .sf-icon {
+    width: 2.5rem; height: 2.5rem;
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .sf-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--emerald);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.03em;
+  }
+
+  .sf-desc {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .storage-visual {
+    background: linear-gradient(160deg, var(--emerald) 0%, var(--emerald-mid) 60%, var(--sage) 100%);
+    border-radius: 4px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .storage-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 39px,
+      rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px, transparent 39px,
+      rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px
+    );
+  }
+
+  .storage-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .temp-display {
+    display: inline-flex; flex-direction: column;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .temp-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+  }
+
+  .temp-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  /* ── WHY US ── */
+  #why {
+    background: var(--cream);
+    padding: 7rem 4rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+  }
+
+  .why-card {
+    background: white;
+    border: 1px solid rgba(90,138,102,0.12);
+    border-radius: 4px;
+    padding: 2.2rem;
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--emerald), var(--gold));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s;
+  }
+
+  .why-card:hover {
+    box-shadow: 0 16px 40px rgba(26,74,46,0.1);
+    transform: translateY(-4px);
+  }
+
+  .why-card:hover::after { transform: scaleX(1); }
+
+  .why-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .why-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--emerald);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .why-desc {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--dark);
+    padding: 7rem 4rem;
+  }
+
+  .contact-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+  }
+
+  #contact h2 { color: var(--cream); }
+  #contact h2 em { color: var(--gold-light); }
+  #contact .section-eyebrow { color: var(--gold); }
+
+  .contact-info {
+    margin-top: 2rem;
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+
+  .contact-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 2.2rem; height: 2.2rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-value {
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.5;
+  }
+
+  .tagline-big {
+    margin-top: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,240,232,0.15);
+    line-height: 1.2;
+  }
+
+  /* ── FORM ── */
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--cream);
+    transition: border-color 0.3s;
+    outline: none;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: rgba(245,240,232,0.25);
+  }
+
+  select option { background: var(--dark); color: var(--cream); }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold);
+    color: var(--dark);
+    border: none; border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(201,168,76,0.3);
+  }
+
+  .success-msg {
+    display: none;
+    padding: 1rem;
+    background: rgba(45,107,69,0.2);
+    border: 1px solid rgba(45,107,69,0.5);
+    border-radius: 4px;
+    color: var(--sage-light);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section, #about, #services, #storage, #why, #contact { padding: 4rem 1.5rem; }
+    .hero-content { padding: 0 1.5rem; }
+    .about-grid, .systems-container, .why-grid, .contact-wrapper, .storage-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-visual { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  /* ── RTL ADJUSTMENTS ── */
+  body.ar .section-eyebrow::before,
+  body.ar .hero-eyebrow::before { display: none; }
+  body.ar .section-eyebrow::after,
+  body.ar .hero-eyebrow::after {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--gold);
+  }
+  body.ar .why-card::after { transform-origin: right; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo" data-en="Rawan <span>International</span>" data-ar="روان <span>العالمية</span>">Rawan <span>International</span></a>
+  <ul class="nav-links">
+    <li><a href="#about" data-en="About" data-ar="عن الشركة">About</a></li>
+    <li><a href="#services" data-en="Partnership" data-ar="الشراكة">Partnership</a></li>
+    <li><a href="#storage" data-en="Operations" data-ar="العمليات">Operations</a></li>
+    <li><a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+    <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btnAr" onclick="setLang('ar')">ع</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-en="Kuwait · Import & Distribution" data-ar="الكويت · استيراد وتوزيع">Kuwait · Import & Distribution</p>
+    <h1 data-en="Fresh from the <em>World</em>, Delivered to Kuwait" data-ar="طازج من <em>العالم</em>، يصل إلى الكويت">Fresh from the <em>World</em>, Delivered to Kuwait</h1>
+    <p class="hero-sub" data-en="Rawan International Trading connects global exporters with Kuwait's thriving fresh produce market through trusted partnerships and transparent systems." data-ar="روان العالمية التجارية تربط المصدّرين العالميين بسوق الكويت من خلال شراكات موثوقة وأنظمة شفافة.">Rawan International Trading connects global exporters with Kuwait's thriving fresh produce market through trusted partnerships and transparent systems.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary" data-en="Become a Partner" data-ar="ابدأ شراكتك">Become a Partner</a>
+      <a href="#services" class="btn-outline" data-en="How We Work" data-ar="كيف نعمل">How We Work</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-en="Scroll" data-ar="للأسفل">Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="section-eyebrow" data-en="Who We Are" data-ar="من نحن">Who We Are</p>
+      <h2 data-en="Rooted in Kuwait, <em>Reaching the World</em>" data-ar="متجذّرون في الكويت، <em>نمتد للعالم</em>">Rooted in Kuwait, <em>Reaching the World</em></h2>
+      <p class="section-body" data-en="Rawan International Trading is a Kuwait-based company specializing in the import and distribution of fresh fruits and vegetables from around the globe. Positioned at the heart of Kuwait's main produce market, we bridge international exporters with local buyers through professional infrastructure, reliable operations, and transparent business practices." data-ar="روان العالمية التجارية شركة كويتية متخصصة في استيراد وتوزيع الفواكه والخضروات الطازجة من مختلف دول العالم. نحن نربط المصدّرين الدوليين بالمشترين المحليين من خلال بنية تحتية احترافية وعمليات موثوقة وممارسات تجارية شفافة.">Rawan International Trading is a Kuwait-based company specializing in the import and distribution of fresh fruits and vegetables from around the globe. Positioned at the heart of Kuwait's main produce market, we bridge international exporters with local buyers through professional infrastructure, reliable operations, and transparent business practices.</p>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-icon">🏭</div>
+          <div class="facility-title" data-en="Modern Warehouses" data-ar="مخازن حديثة">Modern Warehouses</div>
+          <div class="facility-desc" data-en="State-of-the-art storage facilities for bulk produce." data-ar="مرافق تخزين متطورة للمنتجات الضخمة.">State-of-the-art storage facilities for bulk produce.</div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon">❄️</div>
+          <div class="facility-title" data-en="Cold Storage" data-ar="مخازن التبريد">Cold Storage</div>
+          <div class="facility-desc" data-en="Temperature-controlled freezer systems for optimal freshness." data-ar="أنظمة تبريد للحفاظ على النضارة المثلى.">Temperature-controlled freezer systems for optimal freshness.</div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon">🏪</div>
+          <div class="facility-title" data-en="Market Showrooms" data-ar="صالات العرض">Market Showrooms</div>
+          <div class="facility-desc" data-en="Prime display space inside Kuwait's main market." data-ar="مساحات عرض رئيسية داخل سوق الكويت.">Prime display space inside Kuwait's main market.</div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon">🚚</div>
+          <div class="facility-title" data-en="Distribution Network" data-ar="شبكة التوزيع">Distribution Network</div>
+          <div class="facility-desc" data-en="Coverage across all supermarkets and retail chains in Kuwait." data-ar="تغطية لجميع السوبرماركت وسلاسل البيع بالتجزئة في الكويت.">Coverage across all supermarkets and retail chains in Kuwait.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual reveal" style="transition-delay:0.2s">
+      <div class="about-image-frame">
+        <div class="about-image-emoji">🍊</div>
+      </div>
+      <div class="about-stat-badge">
+        <div class="stat-number">7%</div>
+        <div class="stat-label" data-en="Max Commission" data-ar="أقصى عمولة">Max Commission</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-eyebrow" data-en="Partnership Systems" data-ar="أنظمة الشراكة">Partnership Systems</p>
+      <h2 data-en="Two Ways to <em>Work With Us</em>" data-ar="طريقتان <em>للعمل معنا</em>">Two Ways to <em>Work With Us</em></h2>
+      <p class="section-body" data-en="We offer flexible collaboration models designed to suit exporters of all sizes. Choose the system that aligns best with your business objectives." data-ar="نقدم نماذج تعاون مرنة مصممة لتناسب المصدّرين من جميع الأحجام. اختر النظام الذي يتوافق مع أهدافك التجارية.">We offer flexible collaboration models designed to suit exporters of all sizes. Choose the system that aligns best with your business objectives.</p>
+    </div>
+
+    <div class="systems-container">
+      <div class="system-card commission reveal" style="transition-delay:0.15s">
+        <span class="system-badge" data-en="Recommended" data-ar="موصى به">Recommended</span>
+        <h3 data-en="Commission-Based Partnership" data-ar="نظام العمولة">Commission-Based Partnership</h3>
+        <p class="system-intro" data-en="A performance-based model where we sell your products at the best market price and share results transparently." data-ar="نموذج قائم على الأداء نبيع فيه منتجاتك بأفضل سعر في السوق ونشارك النتائج بشفافية.">A performance-based model where we sell your products at the best market price and share results transparently.</p>
+        <ul class="system-steps">
+          <li><span class="step-num">1</span><span data-en="We sign a formal contract with the exporter" data-ar="نوقّع عقداً رسمياً مع المصدّر">We sign a formal contract with the exporter</span></li>
+          <li><span class="step-num">2</span><span data-en="Exporter ships products to Kuwait" data-ar="يرسل المصدّر المنتجات إلى الكويت">Exporter ships products to Kuwait</span></li>
+          <li><span class="step-num">3</span><span data-en="We display in showrooms & distribute to supermarkets" data-ar="نعرض في صالاتنا ونوزع على السوبرماركت">We display in showrooms & distribute to supermarkets</span></li>
+          <li><span class="step-num">4</span><span data-en="Products sold at best possible market price" data-ar="تباع المنتجات بأفضل سعر ممكن في السوق">Products sold at best possible market price</span></li>
+          <li><span class="step-num">5</span><span data-en="Total sales calculated after full container is sold" data-ar="يُحسب إجمالي المبيعات بعد بيع الحاوية بالكامل">Total sales calculated after full container is sold</span></li>
+          <li><span class="step-num">6</span><span data-en="Deduct port, storage & operational costs" data-ar="يُخصم رسوم الميناء والتخزين والمصاريف التشغيلية">Deduct port, storage & operational costs</span></li>
+          <li><span class="step-num">7</span><span data-en="Net amount transferred directly to the exporter" data-ar="يُحوَّل صافي المبلغ مباشرة إلى المصدّر">Net amount transferred directly to the exporter</span></li>
+        </ul>
+        <div class="commission-highlight">
+          <div class="commission-pct">7%</div>
+          <div class="commission-label" data-en="Our commission from total sales. Everything else goes directly to you." data-ar="عمولتنا من إجمالي المبيعات. كل ما تبقى يذهب مباشرة إليك.">Our commission from total sales. Everything else goes directly to you.</div>
+        </div>
+      </div>
+
+      <div class="system-card fixed reveal" style="transition-delay:0.3s">
+        <span class="system-badge" data-en="Fixed Price" data-ar="سعر ثابت">Fixed Price</span>
+        <h3 data-en="Fixed-Price Purchase" data-ar="نظام الشراء بالسعر الثابت">Fixed-Price Purchase</h3>
+        <p class="system-intro" data-en="We agree on a fixed price upfront, pay in full, and handle all sales in Kuwait ourselves." data-ar="نتفق على سعر ثابت مسبقاً، ندفع المبلغ كاملاً، ونتولى جميع عمليات البيع في الكويت.">We agree on a fixed price upfront, pay in full, and handle all sales in Kuwait ourselves.</p>
+        <ul class="system-steps">
+          <li><span class="step-num">1</span><span data-en="We negotiate & agree on a fixed price for a specific product" data-ar="نتفاوض ونتفق على سعر ثابت لمنتج معين">We negotiate & agree on a fixed price for a specific product</span></li>
+          <li><span class="step-num">2</span><span data-en="We pay the full agreed amount in advance" data-ar="ندفع المبلغ المتفق عليه كاملاً مقدماً">We pay the full agreed amount in advance</span></li>
+          <li><span class="step-num">3</span><span data-en="We import a full container" data-ar="نستورد حاوية كاملة">We import a full container</span></li>
+          <li><span class="step-num">4</span><span data-en="We manage all sales operations in Kuwait" data-ar="نتولى عمليات البيع كاملةً داخل الكويت">We manage all sales operations in Kuwait</span></li>
+        </ul>
+        <div class="commission-highlight" style="margin-top:1.8rem; background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.1);">
+          <div style="font-size:1.6rem; line-height:1;">⚡</div>
+          <div class="commission-label" data-en="Fast transactions and strong market presence when pricing is competitive." data-ar="معاملات سريعة وحضور قوي في السوق عند توفر سعر تنافسي.">Fast transactions and strong market presence when pricing is competitive.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORAGE -->
+<section id="storage">
+  <div class="storage-content">
+    <div class="reveal">
+      <p class="section-eyebrow" data-en="Storage & Handling" data-ar="التخزين والمناولة">Storage & Handling</p>
+      <h2 data-en="Freshness from Arrival to <em>Final Sale</em>" data-ar="النضارة من الوصول حتى <em>البيع النهائي</em>">Freshness from Arrival to <em>Final Sale</em></h2>
+      <p class="section-body" data-en="Our state-of-the-art storage infrastructure ensures your products maintain peak quality throughout their journey." data-ar="بنيتنا التحتية المتطورة للتخزين تضمن احتفاظ منتجاتك بأعلى جودة طوال رحلتها.">Our state-of-the-art storage infrastructure ensures your products maintain peak quality throughout their journey.</p>
+      <div class="storage-features">
+        <div class="storage-feature">
+          <div class="sf-icon">🌡️</div>
+          <div>
+            <div class="sf-title" data-en="Temperature-Controlled Storage" data-ar="تخزين مُتحكَّم في درجة الحرارة">Temperature-Controlled Storage</div>
+            <div class="sf-desc" data-en="Maintained at optimal temperatures for every product type." data-ar="يُحافَظ عليها عند درجات الحرارة المثلى لكل نوع من المنتجات.">Maintained at optimal temperatures for every product type.</div>
+          </div>
+        </div>
+        <div class="storage-feature">
+          <div class="sf-icon">📦</div>
+          <div>
+            <div class="sf-title" data-en="Careful Product Handling" data-ar="مناولة دقيقة للمنتجات">Careful Product Handling</div>
+            <div class="sf-desc" data-en="Trained staff ensure minimal damage during loading and distribution." data-ar="كادر مدرّب يضمن الحد الأدنى من التلف أثناء التحميل والتوزيع.">Trained staff ensure minimal damage during loading and distribution.</div>
+          </div>
+        </div>
+        <div class="storage-feature">
+          <div class="sf-icon">📊</div>
+          <div>
+            <div class="sf-title" data-en="Continuous Stock Monitoring" data-ar="متابعة مستمرة للمخزون">Continuous Stock Monitoring</div>
+            <div class="sf-desc" data-en="Real-time tracking of inventory movement from receipt to sale." data-ar="تتبع فوري لحركة المخزون من الاستلام حتى البيع.">Real-time tracking of inventory movement from receipt to sale.</div>
+          </div>
+        </div>
+        <div class="storage-feature">
+          <div class="sf-icon">⚡</div>
+          <div>
+            <div class="sf-title" data-en="Fast Distribution" data-ar="توزيع سريع">Fast Distribution</div>
+            <div class="sf-desc" data-en="Rapid delivery to supermarkets across all of Kuwait." data-ar="توصيل سريع للسوبرماركت في جميع أنحاء الكويت.">Rapid delivery to supermarkets across all of Kuwait.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="storage-visual reveal" style="transition-delay:0.2s">
+      <p class="storage-tagline" data-en=""From the moment your product arrives, to the moment it reaches the consumer — we take ownership."" data-ar=""من لحظة وصول منتجك إلى اللحظة التي يصل فيها إلى المستهلك — نحن نتولى المسؤولية."">
+        "From the moment your product arrives, to the moment it reaches the consumer — we take ownership."
+      </p>
+      <div class="temp-display">
+        <div class="temp-label" data-en="Cold Storage" data-ar="التخزين المبرد">Cold Storage</div>
+        <div class="temp-value">0–4 °C</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+      <p class="section-eyebrow" style="justify-content:center;" data-en="Why Partner With Us" data-ar="لماذا تختار الشراكة معنا">Why Partner With Us</p>
+      <h2 data-en="Built on <em>Trust & Results</em>" data-ar="مبنيون على <em>الثقة والنتائج</em>">Built on <em>Trust & Results</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" style="transition-delay:0.05s">
+        <div class="why-icon">🇰🇼</div>
+        <div class="why-title" data-en="Strong Kuwait Presence" data-ar="حضور قوي في الكويت">Strong Kuwait Presence</div>
+        <p class="why-desc" data-en="Strategically located in Kuwait's main fruit and vegetable market with established relationships and proven market access." data-ar="موقع استراتيجي في سوق الكويت الرئيسي للفواكه والخضروات مع علاقات راسخة.">Strategically located in Kuwait's main fruit and vegetable market with established relationships and proven market access.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.1s">
+        <div class="why-icon">🏬</div>
+        <div class="why-title" data-en="Wide Supermarket Network" data-ar="شبكة واسعة من السوبرماركت">Wide Supermarket Network</div>
+        <p class="why-desc" data-en="We supply major supermarkets, local grocery chains, and retail stores across Kuwait — giving your products maximum visibility." data-ar="نورّد لكبرى السوبرماركت وسلاسل البقالة المحلية ومحلات التجزئة في جميع أنحاء الكويت.">We supply major supermarkets, local grocery chains, and retail stores across Kuwait — giving your products maximum visibility.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.15s">
+        <div class="why-icon">📋</div>
+        <div class="why-title" data-en="Transparent Sales Reports" data-ar="تقارير مبيعات شفافة">Transparent Sales Reports</div>
+        <p class="why-desc" data-en="Full visibility into sales data, costs, and performance. No hidden fees — every dirham accounted for." data-ar="رؤية كاملة لبيانات المبيعات والتكاليف والأداء. لا رسوم خفية.">Full visibility into sales data, costs, and performance. No hidden fees — every dirham accounted for.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s">
+        <div class="why-icon">💸</div>
+        <div class="why-title" data-en="Reliable Financial Settlements" data-ar="تسويات مالية موثوقة">Reliable Financial Settlements</div>
+        <p class="why-desc" data-en="Prompt and accurate transfers once the container is sold. Your money reaches you reliably and on time." data-ar="تحويلات سريعة ودقيقة بعد بيع الحاوية. أموالك تصلك بشكل موثوق وفي الوقت المحدد.">Prompt and accurate transfers once the container is sold. Your money reaches you reliably and on time.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.25s">
+        <div class="why-icon">🥬</div>
+        <div class="why-title" data-en="Fresh Produce Expertise" data-ar="خبرة في المنتجات الطازجة">Fresh Produce Expertise</div>
+        <p class="why-desc" data-en="Years of experience handling perishables ensures your products are treated with the care they deserve from arrival to sale." data-ar="سنوات من الخبرة في التعامل مع المواد القابلة للتلف تضمن معالجة منتجاتك بالعناية التي تستحقها.">Years of experience handling perishables ensures your products are treated with the care they deserve from arrival to sale.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.3s">
+        <div class="why-icon">🤝</div>
+        <div class="why-title" data-en="Long-Term Partnerships" data-ar="شراكات طويلة الأمد">Long-Term Partnerships</div>
+        <p class="why-desc" data-en="We invest in relationships, not just transactions. Our goal is to grow together with our exporters over the long term." data-ar="نستثمر في العلاقات وليس فقط في المعاملات. هدفنا هو النمو معاً مع مصدّرينا على المدى الطويل.">We invest in relationships, not just transactions. Our goal is to grow together with our exporters over the long term.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="reveal">
+      <p class="section-eyebrow" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</p>
+      <h2 data-en="Let's <em>Grow Together</em>" data-ar="لنَنمُ <em>معاً</em>">Let's <em>Grow Together</em></h2>
+      <p class="section-body" style="color:rgba(245,240,232,0.55);" data-en="If you are an exporter of fresh fruits or vegetables and would like to enter the Kuwait market, we warmly welcome you to reach out." data-ar="إذا كنت مصدّراً للفواكه أو الخضروات الطازجة وترغب في دخول السوق الكويتي، يسعدنا التواصل معك.">If you are an exporter of fresh fruits or vegetables and would like to enter the Kuwait market, we warmly welcome you to reach out.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label" data-en="Location" data-ar="الموقع">Location</div>
+            <div class="contact-value" data-en="Main Fruit & Vegetable Market, Kuwait" data-ar="سوق الخضار والفواكه الرئيسي، الكويت">Main Fruit & Vegetable Market, Kuwait</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label" data-en="Phone" data-ar="الهاتف">Phone</div>
+            <div class="contact-value" data-en="+965 99595535" data-ar="00965 99595535">+965 99595535</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label" data-en="Email" data-ar="البريد الإلكتروني">Email</div>
+            <div class="contact-value" data-en="Rawantradingg@gmail.com" data-ar="Rawantradingg@gmail.com">Rawantradingg@gmail.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tagline-big" data-en="&ldquo;Let&rsquo;s grow together.&rdquo;" data-ar="&ldquo;معاً ننمو وننجح&rdquo;">&ldquo;Let&rsquo;s grow together.&rdquo;</div>
+    </div>
+
+    <div class="contact-form reveal" style="transition-delay:0.2s">
+      <div class="form-row">
+        <div class="form-group">
+          <label data-en="First Name" data-ar="الاسم الأول">First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label data-en="Last Name" data-ar="اسم العائلة">Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-en="Company / Organization" data-ar="الشركة / المؤسسة">Company / Organization</label>
+        <input type="text" placeholder="Exporter Co.">
+      </div>
+      <div class="form-group">
+        <label data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+        <input type="email" placeholder="you@company.com">
+      </div>
+      <div class="form-group">
+        <label data-en="Country of Export" data-ar="دولة التصدير">Country of Export</label>
+        <input type="text" placeholder="e.g. Egypt, Spain, Pakistan...">
+      </div>
+      <div class="form-group">
+        <label data-en="Partnership Interest" data-ar="نوع الشراكة المُهتم بها">Partnership Interest</label>
+        <select>
+          <option value="" data-en="Select a system..." data-ar="اختر نظاماً...">Select a system...</option>
+          <option value="commission" data-en="Commission-Based Partnership" data-ar="نظام العمولة">Commission-Based Partnership</option>
+          <option value="fixed" data-en="Fixed-Price Purchase" data-ar="نظام الشراء بالسعر الثابت">Fixed-Price Purchase</option>
+          <option value="both" data-en="Open to Both / Discuss" data-ar="مفتوح للنقاش">Open to Both / Discuss</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-en="Message" data-ar="الرسالة">Message</label>
+        <textarea placeholder="Tell us about your products, volumes, and how you'd like to work together..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+      <div class="success-msg" id="successMsg" data-en="✓ Message sent! We'll be in touch soon." data-ar="✓ تم إرسال رسالتك! سنتواصل معك قريباً.">✓ Message sent! We'll be in touch soon.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo" data-en="Rawan International Trading" data-ar="روان العالمية التجارية">Rawan International Trading</div>
+  <div class="footer-copy" data-en="© 2025 Rawan International Trading · Kuwait" data-ar="© 2025 روان العالمية التجارية · الكويت">© 2025 Rawan International Trading · Kuwait</div>
+</footer>
+
+<script>
+  /* ── LANGUAGE TOGGLE ── */
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('ar', lang === 'ar');
+
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    document.getElementById('btnAr').classList.toggle('active', lang === 'ar');
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+
+    // Update select options
+    document.querySelectorAll('select option[data-en]').forEach(opt => {
+      const text = opt.getAttribute('data-' + lang);
+      if (text) opt.textContent = text;
+    });
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── FORM SUBMIT ── */
+  function handleSubmit() {
+    const msg = document.getElementById('successMsg');
+    msg.style.display = 'block';
+    msg.textContent = currentLang === 'ar'
+      ? '✓ تم إرسال رسالتك! سنتواصل معك قريباً.'
+      : '✓ Message sent! We\'ll be in touch soon.';
+  }
+</script>
+</body>
+</html>
